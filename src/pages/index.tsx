@@ -1,6 +1,6 @@
 import React from 'react';
 import type { GetStaticProps, NextPage } from 'next'
-import { prepareReactRender, useHydrateCache, useQuery } from '../gqty'
+import { prepareReactRender, useHydrateCache } from '../gqty'
 import { PropsWithServerCache } from '@gqty/react';
 import { LaunchesList } from '../components';
 
@@ -12,11 +12,10 @@ const Home: NextPage<Props> = ({ cacheSnapshot }) => {
     cacheSnapshot,
     shouldRefetch: false,
   });
-  const query = useQuery();
 
   return (
     <div>
-      <LaunchesList query={query} />
+      <LaunchesList />
     </div>
   )
 }

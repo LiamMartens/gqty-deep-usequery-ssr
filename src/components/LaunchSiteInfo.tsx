@@ -2,11 +2,11 @@ import React from 'react';
 import { useQuery } from '../gqty';
 
 type Props = {
-    query: ReturnType<typeof useQuery>;
     id: string;
 }
 
-export const LaunchSiteInfo: React.FC<Props> = ({ query, id }) => {
+export const LaunchSiteInfo: React.FC<Props> = ({ id }) => {
+    const query = useQuery();
     const launchpad = query.launchpad({ id });
 
     return (
